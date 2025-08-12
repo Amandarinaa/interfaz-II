@@ -31,6 +31,7 @@ void loop() {   // Se repite infinitamente
 }
 ```
 <img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/parpadeante.png" with="1024" height="550" />
+
 ### Ejercicio 3 Arduino: Control por Pulsador
 ```js
 void setup() {
@@ -46,6 +47,7 @@ void loop() {
 }
 ```
 <img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/pulsador.png" with="1024" height="550" />
+
 ### Ejercicio 4 Arduino: Potenciometro 
 ```js
 void setup() {
@@ -58,6 +60,7 @@ void loop() {
 }
 ```
 <img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/potenciometro.png" width="1024"  height="550" />
+
 ### Ejercicio 5 Arduino: "Semaforo"
 
 ```js
