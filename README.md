@@ -107,3 +107,4 @@ void loop() {
 }
 
 ```
+<img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/semaforo.png" with="1024" height="550" />
