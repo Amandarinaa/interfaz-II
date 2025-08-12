@@ -31,7 +31,7 @@ void loop() {   // Se repite infinitamente
 }
 ```
 
-###Ejercicio 3 Arduino: Control por Pulsador
+### Ejercicio 3 Arduino: Control por Pulsador
 ```js
 void setup() {
   pinMode(2, INPUT);  // Botón como entrada
