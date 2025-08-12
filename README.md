@@ -45,7 +45,7 @@ void loop() {
   }
 }
 ```
-
+https://github.com/Amandarinaa/interfaz-II/blob/main/img/pulsador.png
 ### Ejercicio 4 Arduino: Potenciometro 
 ```js
 void setup() {
