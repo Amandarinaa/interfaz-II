@@ -57,6 +57,7 @@ void loop() {
   analogWrite(9, brillo);               // Ajustar brillo
 }
 ```
+<img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/potenciometro.png" width="1024"  height="550" />
 ### Ejercicio 5 Arduino: "Semaforo"
 
 ```js
