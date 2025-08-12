@@ -30,7 +30,7 @@ void loop() {   // Se repite infinitamente
   //delay(1);  
 }
 ```
-
+https://github.com/Amandarinaa/interfaz-II/blob/main/img/parpadeante.png
 ### Ejercicio 3 Arduino: Control por Pulsador
 ```js
 void setup() {
