@@ -145,8 +145,8 @@ delay(2000);
 <img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/semaforo.png" with="1024" height="550" />
 
 ```js
-### Ejercicio 6: Arduino_Processing
-## Codigo Processing:
+### Ejercicio 6 : ArduinoProcessing
+ Codigo Processing:
 js```
 import processing.serial.*;
 
@@ -197,4 +197,4 @@ void draw()
   ellipse(width/1.3, height/1.3 , d, d);   
 }
 ```
-
+<img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-08-26%20134633.png" with="1024" height="550" />
