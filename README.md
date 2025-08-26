@@ -98,20 +98,48 @@ void loop() {
   digitalWrite(LED_2, LOW);   // Amarillo autos apagado
 
   // 🚦 Fase 3: Rojo autos, verde peatones
-  digitalWrite(LED_1, HIGH);  // Rojo autos encendido
   digitalWrite(LED_4, HIGH);  // Verde peatones encendido
-   digitalWrite(LED_5, LOW);   // Rojo peatones apagado
-  delay(5000); // 5 segundos
+   digitalWrite(LED_1, HIGH);  // Rojo autos encendido
+  digitalWrite(LED_5, LOW);   // Rojo peatones apagado
+delay(2000);
+  digitalWrite(LED_4, LOW); 
+  delay(700);
+   digitalWrite(LED_4, HIGH); 
+  delay(600);
+  digitalWrite(LED_4, LOW); 
+  delay(500);
+  digitalWrite(LED_4, HIGH); 
+  delay(400);
+  digitalWrite(LED_4, LOW); 
+  delay(300);
+   digitalWrite(LED_4, HIGH); 
+  delay(200);
+  digitalWrite(LED_4, LOW); 
+  delay(200);
+  digitalWrite(LED_4, HIGH); 
+  delay(200);
+  digitalWrite(LED_4, LOW); 
+  delay(200);
+  digitalWrite(LED_4, HIGH); 
+  delay(200);
+  digitalWrite(LED_4, LOW); 
+  delay(200);
+  digitalWrite(LED_4, HIGH); 
+  delay(200);
+  digitalWrite(LED_4, LOW); 
+  delay(200);
+
+
+
 
   // 🚦 Fase 4: Rojo autos, rojo peatones (tiempo intermedio)
   digitalWrite(LED_4, LOW);   // Verde peatones apagado
   digitalWrite(LED_1, HIGH);   // rojo autos apagado
   digitalWrite(LED_1, LOW);   // rojo autos apagado
   digitalWrite(LED_5, HIGH);  // Rojo peatones encendido
-  digitalWrite(LED_5, HIGH);   // Verde peatones apagado
-  digitalWrite(LED_3, HIGH);   // Verde peatones apagado
-  delay(5000); // 2 segundos
+  digitalWrite(LED_5, HIGH);   // Rojo peatones encendido
+  digitalWrite(LED_3, HIGH);   // Verde peatones encendido
+  delay(1000); // 5 segundos
 }
-
 ```
 <img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/semaforo.png" with="1024" height="550" />
