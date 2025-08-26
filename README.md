@@ -144,10 +144,10 @@ delay(2000);
 ```
 <img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/semaforo.png" with="1024" height="550" />
 
+### Ejercicio 6 Arduino: Processing
+
 ```js
-### Ejercicio 6 : ArduinoProcessing
- Codigo Processing:
-js```
+
 import processing.serial.*;
 
 Serial myPort;  // Crear objeto de la clase Serial
