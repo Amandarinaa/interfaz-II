@@ -94,19 +94,23 @@ void loop() {
   // 🚦 Fase 2: Amarillo autos, peatones siguen en rojo
   digitalWrite(LED_3, LOW);   // Verde autos apagado
   digitalWrite(LED_2, HIGH);  // Amarillo autos encendido
-  delay(2000); // 2 segundos
+  delay(5000); // 2 segundos
   digitalWrite(LED_2, LOW);   // Amarillo autos apagado
 
   // 🚦 Fase 3: Rojo autos, verde peatones
   digitalWrite(LED_1, HIGH);  // Rojo autos encendido
-  digitalWrite(LED_5, LOW);   // Rojo peatones apagado
   digitalWrite(LED_4, HIGH);  // Verde peatones encendido
+   digitalWrite(LED_5, LOW);   // Rojo peatones apagado
   delay(5000); // 5 segundos
 
   // 🚦 Fase 4: Rojo autos, rojo peatones (tiempo intermedio)
   digitalWrite(LED_4, LOW);   // Verde peatones apagado
+  digitalWrite(LED_1, HIGH);   // rojo autos apagado
+  digitalWrite(LED_1, LOW);   // rojo autos apagado
   digitalWrite(LED_5, HIGH);  // Rojo peatones encendido
-  delay(2000); // 2 segundos
+  digitalWrite(LED_5, HIGH);   // Verde peatones apagado
+  digitalWrite(LED_3, HIGH);   // Verde peatones apagado
+  delay(5000); // 2 segundos
 }
 
 ```
