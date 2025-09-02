@@ -265,3 +265,86 @@ void loop() {
 ```
 <img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/Captura%20de%20pantalla%202025-09-02%20124500.png" with="1024" height="550" />
 
+### Ejercicio 8 Arduino: Processing+Boton+Potenciometro
+Codigo processing
+```js
+import processing.serial.*;
+
+Serial myPort;
+ArrayList<CircleData> circles; 
+
+void setup() {
+  size(1200, 720);
+  background(0);
+  
+  // Ajusta el puerto según tu Arduino
+  println(Serial.list());
+  myPort = new Serial(this, "COM3", 9600);
+  //myPort = new Serial(this, Serial.list()[0], 9600);
+  
+  circles = new ArrayList<CircleData>();
+}
+
+void draw() {
+  //background(0);
+  
+  // Dibujar todos los círculos guardados
+  //fill(0, 150, 255);
+  //noStroke();
+  fill(random(10), random(220), 340, 68);
+  stroke(255, 255, 255);
+  for (CircleData c : circles) {
+    ellipse(c.x, c.y,  random(c.size), random(c.size));
+  }
+  
+  // Leer datos de Arduino
+  if (myPort.available() > 0) {
+    String val = myPort.readStringUntil('\n');
+    if (val != null) {
+      val = trim(val);
+      if (val.startsWith("BTN")) {
+        // Extraer el valor del potenciómetro
+        String[] parts = split(val, ',');
+        if (parts.length == 2) {
+          float potVal = float(parts[1]);
+          float circleSize = map(potVal, 0, 1023, 10, 100); // tamaño 10-100 px
+          circles.add(new CircleData(random(width), random(height), circleSize));
+        }
+      }
+    }
+  }
+}
+
+// Clase para guardar datos de cada círculo
+class CircleData {
+  float x, y, size;
+  CircleData(float x, float y, float size) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+  }
+}
+```
+Codigo arduino
+```js
+int buttonPin = 2;       // Pin del botón
+int potPin = A0;         // Pin del potenciómetro
+int buttonState = 0;
+
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP); // Botón con resistencia interna
+  Serial.begin(9600);
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin);
+
+  if (buttonState == HIGH) {   // Botón presionado
+    int potValue = analogRead(potPin);   // 0 - 1023
+    Serial.print("BTN,");     // etiqueta para Processing
+    Serial.println(potValue); // mando el valor junto con el evento
+    delay(200);               // debounce simple
+  }
+}
+```
+
