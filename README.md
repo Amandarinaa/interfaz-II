@@ -199,8 +199,8 @@ void draw()
 ```
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-08-26%20134633.png" with="1024" height="550" />
 
-####Arduino+Boton+processing
-##codigo processing 
+### Ejercicio 7 Arduino: Processing+Boton
+codigo processing
 ```js
 import processing.serial.*;
 
