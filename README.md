@@ -198,3 +198,49 @@ void draw()
 }
 ```
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-08-26%20134633.png" with="1024" height="550" />
+
+####Arduino+Boton+processing
+##codigo processing 
+```js
+import processing.serial.*;
+
+Serial myPort;
+ArrayList<PVector> circles; 
+
+void setup() {
+  size(900, 500);
+  background(119);
+  
+  // Ajusta el nombre del puerto según tu Arduino
+  println(Serial.list());
+  myPort = new Serial(this, "COM3", 9600);
+  //myPort = new Serial(this, Serial.list()[0], 9600);
+  
+  circles = new ArrayList<PVector>();
+}
+
+void draw() {
+  background(255);
+  
+
+  // Dibujar círculos almacenados
+  fill(random(194), (120), (569), 0);
+  //noStroke();
+  stroke(random(194), 0, 247);
+  for (PVector c : circles) {
+    ellipse(c.x, c.y, random(300), random(300));
+  }
+  
+  // Revisar si llega algo de Arduino
+  if (myPort.available() > 0) {
+    String val = myPort.readStringUntil('\n');
+    if (val != null) {
+      val = trim(val);
+      if (val.equals("1")) {
+        // Cada vez que se aprieta el botón, agregar un círculo en posición aleatoria
+        circles.add(new PVector(random(width), random(height)));
+      }
+    }
+  }
+}
+```
