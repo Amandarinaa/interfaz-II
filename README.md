@@ -353,6 +353,7 @@ void loop() {
 Para este ejercicio utilice el circuito de arduino+led+potenciometro, luego descargue el codigo de arduino y cerré el programa de este. Y al final abri processing y abrí el codigo corespondiente al programa. 
 El código de processing viene pre escrito con una sola elipse que cambia de color y tamaño al responder al potenciometro, pero yo le agreugue más elipses, les cambie el tamaño máximo para que fueran más grandes y cambie los colores de cada una de ellas. 
 Código Arduino: 
+```js
 unsigned int ADCValue;
 void setup(){
     Serial.begin(9600);
@@ -365,6 +366,8 @@ void loop(){
     Serial.println(val);
 delay(50);
 }
+```
+```js
 Codigo processing: 
 import processing.serial.*;
 
@@ -406,4 +409,5 @@ void draw()
   fill(255, c, 0);
   ellipse(width/2, height/2, d, d);   
 }
+```
 Codigo Processing intervenido: 
