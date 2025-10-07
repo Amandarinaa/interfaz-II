@@ -448,7 +448,6 @@ void draw()
   println(sensorVal); // léelos y guárdalos en vals!
   }
 
-```
  //background(0);
   // Escala el valor de mouseX de 0 a 640 a un rango entre 0 y 175
   float c = map(sensorVal, 0, width, 0, 400);
@@ -473,3 +472,5 @@ void draw()
    fill(75, c, 109);
   ellipse(width/1, height/1, d, d);   
 }
+
+```
