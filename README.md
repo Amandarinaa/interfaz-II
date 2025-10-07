@@ -351,7 +351,7 @@ void loop() {
 
 ### Ejercicio 9 Arduino: Processing+Potenciometro intervenido 
 Para este ejercicio utilice el circuito de arduino+led+potenciometro, luego descargue el codigo de arduino y cerré el programa de este. Y al final abri processing y abrí el codigo corespondiente al programa. 
-El código de processing viene pre escrito con una sola elipse que cambia de color y tamaño al responder al potenciometro, pero yo le agreugue más elipses, les cambie el tamaño máximo para que fueran más grandes y cambie los colores de cada una de ellas. 
+El código de processing viene pre escrito con una sola elipse que cambia de color y tamaño al responder al potenciometro, pero yo le agreugue más elipses, les cambie el tamaño máximo (con ayuda de ia, prompt: en que parte de este codigo modifico el tamaño de las elipses?) para que fueran más grandes y cambie los colores y ubicacones de cada una de ellas.
 
 Código Arduino: 
 
@@ -474,8 +474,10 @@ void draw()
 }
 
 ```
+Potenciometro al maximo:
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120452.png"  with="1024" height="550" />
 
+Potenciometro al minimo:
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120507.png"  with="1024" height="550" />
 
 
