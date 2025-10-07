@@ -476,7 +476,7 @@ void draw()
 ```
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120452.png"  with="1024" height="550" />
 
-<img srchttps://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120507.png"  with="1024" height="550" />
+<img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120507.png"  with="1024" height="550" />
 
 
 
