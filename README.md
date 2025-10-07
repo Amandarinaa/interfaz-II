@@ -474,13 +474,13 @@ void draw()
 }
 
 ```
-Potenciometro al maximo:
+Potenciometro al minimo:
 
 
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120452.png"  with="1024" height="550" />
 
 
-Potenciometro al minimo:
+Potenciometro al maximo:
 
 
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120507.png"  with="1024" height="550" />
