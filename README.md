@@ -414,7 +414,7 @@ void draw()
 }
 ```
 Codigo Processing intervenido: 
-
+```js
 import processing.serial.*;
 
 Serial myPort;  // Crear objeto de la clase Serial
@@ -446,12 +446,14 @@ void draw()
   ;
   }
   println(sensorVal); // léelos y guárdalos en vals!
-  }  
+  }
+
+```
  //background(0);
   // Escala el valor de mouseX de 0 a 640 a un rango entre 0 y 175
   float c = map(sensorVal, 0, width, 0, 400);
   // Escala el valor de mouseX de 0 a 640 a un rango entre 40 y 300
-  float d = map(sensorVal, 0, width, 40  <span style="color:blue;">800</span>)
+  float d = map(sensorVal, 0, width, 40, 800)
   fill(185, c, 0);
  ellipse(width/3, height/11, d, d);   
   
