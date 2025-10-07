@@ -474,3 +474,5 @@ void draw()
 }
 
 ```
+<img src="https://github.com/Amandarinaa/interfaz-II/blob/main/img/Captura%20de%20pantalla%202025-09-02%20132549.png"  with="1024" height="550" />
+
