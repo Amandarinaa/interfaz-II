@@ -487,6 +487,7 @@ Potenciometro al maximo:
 
 
 ### Ejercicio 10 Arduino: Processing+Potenciometro+sensor 
+
 ´´´js
 void setup()
 {
