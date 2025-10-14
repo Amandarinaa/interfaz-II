@@ -488,7 +488,8 @@ Potenciometro al maximo:
 
 ### Ejercicio 10 Arduino: Processing+Potenciometro+sensor 
 codigo arduino:
-js´´´
+
+´´´js
 void setup()
 {
   Serial.begin(9600);// abre el puerto serial y Establece la velocidad en baudios a 9600 bps
