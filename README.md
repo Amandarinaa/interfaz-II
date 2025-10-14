@@ -490,6 +490,7 @@ Potenciometro al maximo:
 codigo arduino:
 
 ´´´js
+
 void setup()
 {
   Serial.begin(9600);// abre el puerto serial y Establece la velocidad en baudios a 9600 bps
@@ -501,5 +502,6 @@ void loop()
   Serial.println(sensorValue); //imprime el valor a serial.
   delay(200);
 }
+
 ´´´
 
