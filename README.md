@@ -1,15 +1,15 @@
 # interfaz-II
 
 1. [Hola Mundo](#ejercicio-numero-1-arduino--hola-mundo) <br>
-2.[Led Intermitente](#ejercicio-numero-1-arduino--hola-mundo)<br>
-3.[Control con Pulsador](#ejercicio-numero-1-arduino--hola-mundo)<br>
-4. [Potenciometro](
-5. [Semaforo](
-6. [Prossecing](
-7. Processing+Boton](
-8. [Arduino+Boton+Processing](
-9. [Processing+Potenciometro intervenido](
-10. [Processing+Potenciometro+Sensor](
+2.[Led Intermitente](#ejercicio-numero-1-arduino--hola-mundo) <br>
+3.[Control con Pulsador](#ejercicio-numero-1-arduino--hola-mundo) <br>
+4. [Potenciometro](#ejercicio-numero-1-arduino--hola-mundo) <br>
+5. [Semaforo](#ejercicio-numero-1-arduino--hola-mundo) <br>
+6. [Prossecing](#ejercicio-numero-1-arduino--hola-mundo) <br>
+7. Processing+Boton](#ejercicio-numero-1-arduino--hola-mundo) <br>
+8. [Arduino+Boton+Processing](#ejercicio-numero-1-arduino--hola-mundo) <br>
+9. [Processing+Potenciometro intervenido](#ejercicio-numero-1-arduino--hola-mundo) <br>
+10. [Processing+Potenciometro+Sensor](#ejercicio-numero-1-arduino--hola-mundo) <br>
 ### Ejercicio numero 1 Arduino:  "Hola Mundo" 
 
 ```js
