@@ -480,10 +480,25 @@ Potenciometro al minimo:
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120452.png"  with="1024" height="550" />
 
 
-Potenciometro al maximo:
+Potenciometro al maximo: 
 
 
 <img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/img/Captura%20de%20pantalla%202025-10-07%20120507.png"  with="1024" height="550" />
 
 
+### Ejercicio 10 Arduino: Processing+Potenciometro+sensor 
+codigo arduino:
+js´´´
+void setup()
+{
+  Serial.begin(9600);// abre el puerto serial y Establece la velocidad en baudios a 9600 bps
+}
+void loop()
+{
+  int sensorValue;
+  sensorValue = analogRead(0);   //conectar el sensor de humedad al pin analogo 0
+  Serial.println(sensorValue); //imprime el valor a serial.
+  delay(200);
+}
+´´´
 
