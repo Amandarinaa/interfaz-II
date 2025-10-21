@@ -1,8 +1,8 @@
 # interfaz-II
 
 1. [Hola Mundo](#ejercicio-numero-1-arduino--hola-mundo) <br>
-2.[Led Intermitente](#ejercicio-2-arduino-led-intermietente) <br> 
-3.[Control con Pulsador](#ejercicio-3-arduino-control-por-pulsador) <br>
+2. [Led Intermitente](#ejercicio-2-arduino-led-intermietente) <br> 
+3. [Control con Pulsador](#ejercicio-3-arduino-control-por-pulsador) <br>
 4. [Potenciometro](#ejercicio-4-arduino-potenciometro) <br>
 5. [Semaforo](#ejercicio-5-arduino-semaforo) <br>
 6. [Processing](#ejercicio-6-arduino-processing) <br>
