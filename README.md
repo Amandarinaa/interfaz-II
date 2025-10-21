@@ -9,7 +9,7 @@
 7. [Processing+Boton](#ejercicio-7-arduino-processingboton) <br>
 8. [Arduino+Boton+Processing](#ejercicio-8-arduino-processingbotonpotenciometro) <br>
 9. [Processing+Potenciometro intervenido](#ejercicio-9-arduino-processingpotenciometro-intervenido) <br>
-10. [Processing+Potenciometro+Sensor](e#ejercicio-10-arduino-processingpotenciometrosensor) <br>
+10. [Processing+Potenciometro+Sensor](#ejercicio-10-arduino-processingpotenciometrosensor) <br>
 ### Ejercicio numero 1 Arduino:  "Hola Mundo" 
 
 ```js
