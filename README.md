@@ -5,11 +5,11 @@
 3.[Control con Pulsador](#ejercicio-3-arduino-control-por-pulsador) <br>
 4. [Potenciometro](#ejercicio-4-arduino-potenciometro) <br>
 5. [Semaforo](#ejercicio-5-arduino-semaforo) <br>
-6. [Prossecing](#ejercicio-6-arduino-processingo) <br>
-7. [Processing+Boton](#ejercicio-numero-1-arduino--hola-mundo) <br>
-8. [Arduino+Boton+Processing](#ejercicio-numero-1-arduino--hola-mundo) <br>
-9. [Processing+Potenciometro intervenido](#ejercicio-numero-1-arduino--hola-mundo) <br>
-10. [Processing+Potenciometro+Sensor](#ejercicio-numero-1-arduino--hola-mundo) <br>
+6. [Prossecing](#ejercicio-6-arduino-processing) <br>
+7. [Processing+Boton](#ejercicio-7-arduino-processingboton) <br>
+8. [Arduino+Boton+Processing](#ejercicio-8-arduino-processingbotonpotenciometro) <br>
+9. [Processing+Potenciometro intervenido](#ejercicio-9-arduino-processingpotenciometro-intervenido) <br>
+10. [Processing+Potenciometro+Sensor](e#ejercicio-10-arduino-processingpotenciometrosensor) <br>
 ### Ejercicio numero 1 Arduino:  "Hola Mundo" 
 
 ```js
