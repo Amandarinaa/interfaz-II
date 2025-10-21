@@ -1,11 +1,11 @@
 # interfaz-II
 
 1. [Hola Mundo](#ejercicio-numero-1-arduino--hola-mundo) <br>
-2.[Led Intermitente](#ejercicio-numero-1-arduino--hola-mundo) <br>
-3.[Control con Pulsador](#ejercicio-numero-1-arduino--hola-mundo) <br>
-4. [Potenciometro](#ejercicio-numero-1-arduino--hola-mundo) <br>
-5. [Semaforo](#ejercicio-numero-1-arduino--hola-mundo) <br>
-6. [Prossecing](#ejercicio-numero-1-arduino--hola-mundo) <br>
+2.[Led Intermitente](#ejercicio-2-arduino-led-intermietente) <br> 
+3.[Control con Pulsador](#ejercicio-3-arduino-control-por-pulsador) <br>
+4. [Potenciometro](#ejercicio-4-arduino-potenciometro) <br>
+5. [Semaforo](#ejercicio-5-arduino-semaforo) <br>
+6. [Prossecing](#ejercicio-6-arduino-processingo) <br>
 7. [Processing+Boton](#ejercicio-numero-1-arduino--hola-mundo) <br>
 8. [Arduino+Boton+Processing](#ejercicio-numero-1-arduino--hola-mundo) <br>
 9. [Processing+Potenciometro intervenido](#ejercicio-numero-1-arduino--hola-mundo) <br>
