@@ -615,3 +615,276 @@ void draw() {
   }
 }
 ```
+
+### Idea Grupal
+
+Esta proyecto nace desde la idea de hacer desorden en el orden, la intencion de querer ser ordenado pero que se vuelve imposible ser este completamente, por lo que pensamos en crear en Processing una linea de color blanco en la que se vean las letras de la palabra "ORDEN" de forma seguida y que esta palabra se moviera por la pantalla a partir del uso de Arduino y Potenciometro.
+
+Codigo arduino:
+```js
+int potPin = A0; // Pin del potenciómetro
+int potValue = 0;
+
+void setup() {
+Serial.begin(9600);
+}
+
+void loop() {
+potValue = analogRead(potPin); // Lee valor (0 a 1023)
+Serial.println(potValue); // Envia a Processing
+delay(30); // Pequeño retardo
+}
+```
+
+Codigo Processing:
+```js
+import processing.serial.*;
+
+Serial myPort;
+String textToShow = "ANY FURTHER QUESTIONS";
+ArrayList<PVector> trail = new ArrayList<PVector>();
+
+float potValue = 0; // valor leído del Arduino
+float mappedX = 0; // posición mapeada
+
+void setup() {
+size(800, 400);
+background(0);
+textAlign(CENTER, CENTER);
+textSize(24);
+fill(255);
+
+// Abrir el puerto serie correcto (ver cuál aparece en la consola)
+println(Serial.list());
+myPort = new Serial(this, Serial.list()[0], 9600);
+}
+
+void draw() {
+background(0);
+
+// Leer valor desde Arduino si hay datos
+while (myPort.available() > 0) {
+String val = myPort.readStringUntil('\n');
+if (val != null) {
+potValue = float(trim(val));
+}
+}
+
+// Mapeo del potenciómetro a posición X en pantalla
+mappedX = map(potValue, 0, 1023, 0, width);
+
+// Crear una trayectoria con ruido vertical (como si fuera una línea viva)
+float yPos = height/2 + sin(frameCount * 0.05) * 50;
+trail.add(new PVector(mappedX, yPos));
+
+// Mantener máximo 100 puntos
+if (trail.size() > 100) trail.remove(0);
+
+// Dibujar línea blanca del trazo
+stroke(255);
+strokeWeight(2);
+noFill();
+beginShape();
+for (PVector p : trail) {
+curveVertex(p.x, p.y);
+}
+endShape();
+
+// Mostrar texto sobre la línea
+for (int i = 0; i < trail.size(); i++) {
+float t = map(i, 0, trail.size(), 0, textToShow.length());
+int index = int(t);
+if (index < textToShow.length()) {
+char c = textToShow.charAt(index);
+PVector p = trail.get(i);
+pushMatrix();
+translate(p.x, p.y);
+rotate(noise(i * 0.1, frameCount * 0.01) * TWO_PI);
+text(c, 0, 0);
+popMatrix();
+}
+}
+}
+```
+
+El codigo de processing lo sacamos de chat gpt, usando el prompt: al momento de mover el potenciómetro, se crea una línea blanca donde aparece un texto, código para processing y arduino uno.
+import processing.serial.*;
+```js
+Serial myPort;
+String textToShow = "ANY FURTHER QUESTIONS";
+ArrayList<PVector> trail = new ArrayList<PVector>();
+
+float potValue = 0; // valor leído del Arduino
+float mappedX = 0; // posición mapeada
+
+void setup() {
+size(800, 400);
+background(0);
+textAlign(CENTER, CENTER);
+textSize(24);
+fill(255);
+
+// Abrir el puerto serie correcto (ver cuál aparece en la consola)
+println(Serial.list());
+myPort = new Serial(this, Serial.list()[0], 9600);
+}
+
+void draw() {
+background(0);
+
+// Leer valor desde Arduino si hay datos
+while (myPort.available() > 0) {
+String val = myPort.readStringUntil('\n');
+if (val != null) {
+potValue = float(trim(val));
+}
+}
+
+// Mapeo del potenciómetro a posición X en pantalla
+mappedX = map(potValue, 0, 1023, 0, width);
+
+// Crear una trayectoria con ruido vertical (como si fuera una línea viva)
+float yPos = height/2 + sin(frameCount * 0.05) * 50;
+trail.add(new PVector(mappedX, yPos));
+
+// Mantener máximo 100 puntos
+if (trail.size() > 100) trail.remove(0);
+
+// Dibujar línea blanca del trazo
+stroke(255);
+strokeWeight(2);
+noFill();
+beginShape();
+for (PVector p : trail) {
+curveVertex(p.x, p.y);
+}
+endShape();
+
+// Mostrar texto sobre la línea
+for (int i = 0; i < trail.size(); i++) {
+float t = map(i, 0, trail.size(), 0, textToShow.length());
+int index = int(t);
+if (index < textToShow.length()) {
+char c = textToShow.charAt(index);
+PVector p = trail.get(i);
+pushMatrix();
+translate(p.x, p.y);
+rotate(noise(i * 0.1, frameCount * 0.01) * TWO_PI);
+text(c, 0, 0);
+popMatrix();
+}
+}
+}
+```
+Con este resultado:
+
+https://github.com/clocuello/INTERFAZ2/blob/main/Captura%20de%20pantalla%202025-11-03%20101530.png
+<img src="https://github.com/clocuello/INTERFAZ2/blob/main/Captura%20de%20pantalla%202025-11-03%20101530.png" width="1024" height="550" />
+
+
+despues cambiamos la frase String textToShow = "ANY FURTHER QUESTIONS";
+por “ORDEN”
+
+
+despues modificamos el tamaño de la letra en la parte del código:
+
+textSize(24);
+donde el vez de 24 le pusimos 50
+
+
+luego modificamos el espacio que había entre cada letra, en la parte del código:
+
+for (int i = 0; i < trail.size(); i++) {
+
+eliminamos el segundo signo + y lo cambiamos por un signo = y despues de eso se agrego un numero, fuimos probando tamaños y llegamos a el 10
+
+
+despues modificamos el grosor de la linea blanca que guia las letras en la parte del código:
+
+
+strokeWeight(2);
+donde pusimos 50 en vez de 20
+
+y luego cambiamos el color de las letras de blanco: fill(255);
+a negro: fill(0);
+
+
+
+despues cambiamos el largo de la línea en la parte:
+ if (trail.size() > 100) trail.remove(0);
+y cambiamos el 100 por 600
+
+
+Hicimos varias modificaciones dentro del código, incluyendo intentar agregar un segundo potenciómetro, agregar varias veces la misma frase, cambiar los colores del texto, línea y fondo, y cambiar los tamaños de las letras, fuera de los cambios que quedaron dentro del código.
+
+Este es el código final y modificado, las zonas subrayadas en verde son las zonas modificadas:
+```js
+import processing.serial.*;
+
+Serial myPort;
+String textToShow = "NEDRO NEDRO NEDRO";
+ArrayList<PVector> trail = new ArrayList<PVector>();
+
+float potValue = 0; // valor leído del Arduino
+float mappedX = 0; // posición mapeada
+
+void setup() {
+size(800, 400);
+background(0);
+textAlign(CENTER, CENTER);
+textSize(50);
+fill(0);
+
+// Abrir el puerto serie correcto (ver cuál aparece en la consola)
+println(Serial.list());
+myPort = new Serial(this, Serial.list()[0], 9600);
+}
+
+void draw() {
+background(0);
+
+// Leer valor desde Arduino si hay datos
+while (myPort.available() > 0) {
+String val = myPort.readStringUntil('\n');
+if (val != null) {
+potValue = float(trim(val));
+}
+}
+
+// Mapeo del potenciómetro a posición X en pantalla
+mappedX = map(potValue, 0, 1023, 0, width);
+
+// Crear una trayectoria con ruido vertical (como si fuera una línea viva)
+float yPos = height/2 + sin(frameCount * 0.05) * 50;
+trail.add(new PVector(mappedX, yPos));
+
+// Mantener máximo 100 puntos
+if (trail.size() > 600) trail.remove(0);
+
+// Dibujar línea blanca del trazo
+stroke(255);
+strokeWeight(40);
+noFill();
+beginShape();
+for (PVector p : trail) {
+curveVertex(p.x, p.y);
+}
+endShape();
+
+
+// Mostrar texto sobre la línea
+for (int i = 5; i < trail.size(); i+=10) {
+float t = map(i, 0, trail.size(), 0, textToShow.length());
+int index = int(t);
+if (index < textToShow.length()) {
+char c = textToShow.charAt(index);
+PVector p = trail.get(i);
+pushMatrix();
+translate(p.x, p.y);
+rotate(noise(i * 0.1, frameCount * 0.01) * TWO_PI);
+text(c, 0, 0);
+popMatrix();
+}
+}
+}
+```
