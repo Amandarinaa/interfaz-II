@@ -954,8 +954,7 @@ void draw() {
   }
 }
 ```
-<img src="https://github.com/clocuello/INTERFAZ2/blob/main/cvss.jpg" width="1024" height="550" />
-<img src="https://github.com/clocuello/INTERFAZ2/blob/main/ssp.png" width="1024" height="550" />
+<img src="https://github.com/Amandarinaa/interfaz-II/blob/main/Captura%20de%20pantalla%202025-10-21%20130105.png" width="1024" height="550" />
 
 ### Ejercicio N° 14: PROMEDIO DE IMAGENES
 
