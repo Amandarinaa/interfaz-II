@@ -10,7 +10,13 @@
 8. [Arduino+Boton+Processing](#ejercicio-8-arduino-processingbotonpotenciometro) <br>
 9. [Processing+Potenciometro intervenido](#ejercicio-9-arduino-processingpotenciometro-intervenido) <br>
 10. [Processing+Potenciometro+Sensor](#ejercicio-10-arduino-processingpotenciometrosensor) <br>
-
+11. [Botonera](#ejercicio-n-10-botonera) <br>
+12. [Sensor Sharp](#ejercicio-n-11-sensor-shar) <br>
+13. [Sensor de Humedad](#ejercicio-n-12-sensor-de-humedad) <br>
+14. [Cuerpo, Video, Sensor Sharp](#ejercicio-n-13-cuerpo-video-sensor-sharp)
+15. [Promedio de Imágenes](#ejercicio-n-14-promedio-de-imagenes)
+16. [Promedio de Imagenes, Carpeta, Potenciometro](#ejercicio-n-15-promedio-de-imagenes-llamado-una-carpeta--potenciometro)
+17. [Idea Grupal](#idea-grupal) <br>
 ### Ejercicio numero 1 Arduino:  "Hola Mundo" 
 
 ```js
