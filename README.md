@@ -1659,6 +1659,6 @@ void loop() {
 }
 
 ````
-
+<img src="https://raw.githubusercontent.com/Amandarinaa/interfaz-II/refs/heads/main/IMG_4897.jpeg" with="1024" height="550" />
 
 
