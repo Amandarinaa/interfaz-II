@@ -1508,3 +1508,156 @@ popMatrix();
 }
 }
 ```
+### Idea Grupal, Entrega Final 
+
+```
+codigo Processing:
+
+import processing.serial.*;
+
+Serial myPort;
+String textToShow = "NEDRO NEDRO NEDRO";
+ArrayList<PVector> trail = new ArrayList<PVector>();
+
+float potValue1 = 0; // valor leído del Arduino (Pot X)
+float mappedX = 0;   // posición mapeada (X)
+float potValue2 = 0; // valor leído del Arduino (Pot Y)
+float mappedY = 0;   // posición mapeada (Y)
+
+void setup() {
+  size(800, 400);
+  background(0);
+  textAlign(CENTER, CENTER);
+  textSize(50);
+  fill(0);
+ 
+  // Abrir el puerto serie correcto (ver cuál aparece en la consola)
+  println(Serial.list());
+  // Asegúrate de que [0] sea el puerto correcto. La velocidad debe coincidir con Arduino.
+  myPort = new Serial(this, Serial.list()[0], 9600);
+}
+
+void draw() {
+  background(0);
+
+  // Leer valor desde Arduino si hay datos
+  while (myPort.available() > 0) {
+    String val = myPort.readStringUntil('\n');
+    if (val != null) {
+      val = trim(val); // Limpiar el string
+      String[] pieces = split(val, ','); // Dividir por la coma
+
+      // **CORRECCIÓN 1: Lectura de dos valores separados**
+      if (pieces.length >= 2) {
+        potValue1 = float(trim(pieces[0])); // X
+        potValue2 = float(trim(pieces[1])); // Y
+      }
+    }
+  }
+
+  // **CORRECCIÓN 2: Mapeo de valores (Usando potValue1 y potValue2)**
+  mappedX = map(potValue1, 0, 1023, 0, width);
+  // mappedY ahora mapea a la altura 'height'
+  mappedY = map(potValue2, 0, 1023, 0, height);
+
+  // Crear una trayectoria con ruido vertical (como si fuera una línea viva)
+  // **CORRECCIÓN 3: La posición Y base es mappedY**
+  float yPos = mappedY + sin(frameCount * 0.03) * 50;
+ 
+  trail.add(new PVector(mappedX, yPos));
+ 
+  // Mantener máximo 600 puntos
+  if (trail.size() > 600) trail.remove(0);
+
+  // Dibujar línea blanca del trazo
+  stroke(255);
+  strokeWeight(60);
+  noFill();
+  beginShape();
+  // Se necesita al menos 4 puntos para curveVertex, de lo contrario podría dar error.
+  // Es una buena práctica agregar puntos de control al principio y final si se usa curveVertex.
+  if (trail.size() >= 2) {
+      // Si el rastro es lo suficientemente largo, empieza a dibujar
+      // Añade el primer punto dos veces (punto de control)
+      curveVertex(trail.get(0).x, trail.get(0).y);
+     
+      for (PVector p : trail) {
+        curveVertex(p.x, p.y);
+      }
+     
+      // Añade el último punto dos veces (punto de control)
+      curveVertex(trail.get(trail.size() - 1).x, trail.get(trail.size() - 1).y);
+  }
+  endShape();
+
+  // Mostrar texto sobre la línea
+  for (int i = 5; i < trail.size(); i+=10) {
+    float t = map(i, 0, trail.size(), 0, textToShow.length());
+    int index = int(t);
+    if (index < textToShow.length()) {
+      char c = textToShow.charAt(index);
+      PVector p = trail.get(i);
+      pushMatrix();
+      translate(p.x, p.y);
+      // El color del texto debe ser diferente al fondo (0) para que se vea
+      fill(0);
+      rotate(noise(i * 0.1, frameCount * 0.01) * TWO_PI);
+      text(c, 0, 0);
+      popMatrix();
+      // Vuelve a poner el fill en negro/sin relleno si es necesario para otros elementos,
+      // pero aquí, para el rastro, no se usa fill.
+      noFill();
+    }
+  }
+}
+```
+Codigo Arduino
+
+```
+
+int pot1Pin = A0;   // Primer potenciómetro
+
+int pot2Pin = A1;   // Segundo potenciómetro
+
+
+
+int pot1Value = 0;
+
+int pot2Value = 0;
+
+
+
+void setup() {
+
+  Serial.begin(9600);
+
+}
+
+
+
+void loop() {
+
+  pot1Value = analogRead(pot1Pin); // Lee potenciómetro 1 (0–1023)
+
+  pot2Value = analogRead(pot2Pin); // Lee potenciómetro 2 (0–1023)
+
+
+
+  // Envía ambos valores a Processing separados por coma
+
+  Serial.print(pot1Value);
+
+  Serial.print(",");
+
+  Serial.println(pot2Value);
+
+
+
+  delay(30); // Pequeño retardo
+
+}
+
+````
+
+
+
