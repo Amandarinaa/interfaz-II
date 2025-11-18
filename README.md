@@ -17,6 +17,7 @@
 15. [Promedio de Imágenes](#ejercicio-n-14-promedio-de-imagenes)
 16. [Promedio de Imagenes, Carpeta, Potenciometro](#ejercicio-n-15-promedio-de-imagenes-llamado-una-carpeta--potenciometro)
 17. [Idea Grupal](#idea-grupal) <br>
+18.  [Idea Grupal, Entrega Final](#idea-grupal-entrega-final) <br>
 ### Ejercicio numero 1 Arduino:  "Hola Mundo" 
 
 ```js
